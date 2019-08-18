@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>📄vue-lazyload(懒加载） | Loloya</title>
+    <meta name="description" content="人生苦短,作死寻欢 ✨">
+    <link rel="icon" href="/img/favicon.ico">
+    
+    <link rel="preload" href="/assets/css/0.styles.cfcf5ab8.css" as="style"><link rel="preload" href="/assets/js/app.d3efc14e.js" as="script"><link rel="preload" href="/assets/js/2.3a3a5c3a.js" as="script"><link rel="preload" href="/assets/js/26.e8884916.js" as="script"><link rel="prefetch" href="/assets/js/10.a9daca65.js"><link rel="prefetch" href="/assets/js/11.da12bc9d.js"><link rel="prefetch" href="/assets/js/12.4618ee3d.js"><link rel="prefetch" href="/assets/js/13.ef30e496.js"><link rel="prefetch" href="/assets/js/14.11123a73.js"><link rel="prefetch" href="/assets/js/15.2a8791de.js"><link rel="prefetch" href="/assets/js/16.501f4c9d.js"><link rel="prefetch" href="/assets/js/17.7c687ef5.js"><link rel="prefetch" href="/assets/js/18.2d093817.js"><link rel="prefetch" href="/assets/js/19.8760919d.js"><link rel="prefetch" href="/assets/js/20.02192eef.js"><link rel="prefetch" href="/assets/js/21.64349d94.js"><link rel="prefetch" href="/assets/js/22.d9c5ce44.js"><link rel="prefetch" href="/assets/js/23.2465dc59.js"><link rel="prefetch" href="/assets/js/24.7ee60829.js"><link rel="prefetch" href="/assets/js/25.ec0d75d8.js"><link rel="prefetch" href="/assets/js/27.17bc2875.js"><link rel="prefetch" href="/assets/js/3.b1dc7b00.js"><link rel="prefetch" href="/assets/js/4.b75841e9.js"><link rel="prefetch" href="/assets/js/5.71e06a64.js"><link rel="prefetch" href="/assets/js/6.a90ce58d.js"><link rel="prefetch" href="/assets/js/7.93734918.js"><link rel="prefetch" href="/assets/js/8.aefe1e94.js"><link rel="prefetch" href="/assets/js/9.3f7cb3a9.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.cfcf5ab8.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Loloya</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><a href="/pages/BBS.html" class="sidebar-link">👻</a></li><li><a href="/pages/about.html" class="sidebar-link">这个博客的诞生</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>HTML + CSS基础</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JS基础(ES5)</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JS基础(ES6+)</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Vue</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/vue/_brief.html" class="sidebar-link">📄vue项目搭建</a></li><li><a href="/pages/vue/vue-cli.html" class="sidebar-link">📄vue-cli(简）</a></li><li><a href="/pages/vue/vue-lazyload.html" class="active sidebar-link">📄vue-lazyload(懒加载）</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pages/vue/vue-lazyload.html#懒加载" class="sidebar-link">懒加载</a></li><li class="sidebar-sub-header"><a href="/pages/vue/vue-lazyload.html#为什么需要懒加载？" class="sidebar-link">为什么需要懒加载？</a></li><li class="sidebar-sub-header"><a href="/pages/vue/vue-lazyload.html#图片懒加载" class="sidebar-link">图片懒加载</a></li><li class="sidebar-sub-header"><a href="/pages/vue/vue-lazyload.html#组件懒加载" class="sidebar-link">组件懒加载</a></li></ul></li><li><a href="/pages/vue/patch.html" class="sidebar-link">📄遇到的问题</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>RegExp</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Git</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>博客相关</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Lunix</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>PHP</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>NODE</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>其他</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="📄vue-lazyload-懒加载）"><a href="#📄vue-lazyload-懒加载）" aria-hidden="true" class="header-anchor">#</a> 📄vue-lazyload(懒加载）</h1> <h2 id="懒加载"><a href="#懒加载" aria-hidden="true" class="header-anchor">#</a> 懒加载</h2> <ul><li>也叫延迟加载， 即在需要的时候进行加载， 随用随载。</li> <li>个人根据功能划分为图片的懒加载和组件的懒加载。</li></ul> <h2 id="为什么需要懒加载？"><a href="#为什么需要懒加载？" aria-hidden="true" class="header-anchor">#</a> 为什么需要懒加载？</h2> <p>像vue这种单页面应用， 如果没有应用懒加载， 运用webpack打包后的文件将会异常的大， 造成进入首页时， 需要加载的内容过多， 时间过长， 会出啊先长时间的白屏， 即使做了loading也是不利于用户体验， 而运用懒加载则可以将页面进行划分， 需要的时候加载页面， 可以有效的分担首页所承担的加载压力， 减少首页加载用时。</p> <p>简单的说就是： 进入首页不用一次加载过多资源， 造成用时过长。</p> <h2 id="图片懒加载"><a href="#图片懒加载" aria-hidden="true" class="header-anchor">#</a> 图片懒加载</h2> <h4 id="使用vue-lazyload插件："><a href="#使用vue-lazyload插件：" aria-hidden="true" class="header-anchor">#</a> 使用vue-lazyload插件：</h4> <ol><li>下载</li></ol> <p><code>$ npm install vue-lazyload -D</code></p> <ol start="2"><li>注册插件</li></ol> <div class="language-js extra-class"><pre class="language-js"><code>   <span class="token comment">// main.js:</span>
+
+   <span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span>
+   <span class="token keyword">import</span> App <span class="token keyword">from</span> <span class="token string">'./App.vue'</span>
+   <span class="token keyword">import</span> VueLazyload <span class="token keyword">from</span> <span class="token string">'vue-lazyload'</span>
+   <span class="token comment">// 使用方法1:</span>
+   Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>VueLazyload<span class="token punctuation">)</span>
+
+   <span class="token comment">// 使用方法2: 自定义参数选项配置</span>
+   Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>VueLazyload<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+       preLoad<span class="token punctuation">:</span> <span class="token number">1.3</span><span class="token punctuation">,</span> <span class="token comment">// 提前加载高度（数字 1 表示 1 屏的高度） 默认值： 1.3</span>
+       error<span class="token punctuation">:</span> <span class="token string">'dist/error.png'</span><span class="token punctuation">,</span> <span class="token comment">// 当加载图片失败的时候</span>
+       loading<span class="token punctuation">:</span> <span class="token string">'dist/loading.gif'</span><span class="token punctuation">,</span> <span class="token comment">// 图片加载状态下显示的图片</span>
+       attempt<span class="token punctuation">:</span> <span class="token number">3</span> <span class="token comment">//	加载错误后最大尝试次数 默认值： 3</span>
+   <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><ol start="3"><li>在页面中使用</li></ol> <div class="language-html extra-class"><pre class="language-html"><code>   <span class="token comment">&lt;!-- mobile.vue --&gt;</span>
+   
+   <span class="token comment">&lt;!-- 使用方法1: 可能图片url是直接从后台拿到的， 把‘:src'替换成‘v-lazy'就行 --&gt;</span> 
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>img in list<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">v-lazy</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>img.src<span class="token punctuation">&quot;</span></span> <span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+   
+   <span class="token comment">&lt;!-- 使用方法2: 使用懒加载容器v-lazy-container, 和v-lazy差不多， 通过自定义指令去定义的， 不过v-lazy-container扫描的是内部的子元素 --&gt;</span> 
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">v-lazy-container</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>{ selector: 'img'}<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">data-src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>/static/mobile/bohai/p2/bg.jpg<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">data-src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>/static/mobile/bohai/p3/bg.jpg<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+       ...
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">data-src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>/static/mobile/bohai/p13/bg.jpg<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+   
+   
+</code></pre></div><blockquote><p>注意： v-lazy='src'中的src一定要使用data里面的变量， 不能写真实的图片路径， 这样会报错导致没有效果， 因为vue的自定义指令必须对应data中的变量 只能是变量； v-lazy-container内部指定元素设置的data-src是图片的真实路径， 不能是data变量， 这个和v-lazy完全相反。</p></blockquote> <ol start="4"><li>给每一个状态添加样式</li></ol> <div class="language-css extra-class"><pre class="language-css"><code>   <span class="token selector">&lt;style&gt;
+     img[lazy=loading]</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
+     <span class="token selector">img[lazy=error]</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
+     <span class="token selector">img[lazy=loaded]</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
+   &lt;/style&gt;
+</code></pre></div><h2 id="组件懒加载"><a href="#组件懒加载" aria-hidden="true" class="header-anchor">#</a> 组件懒加载</h2> <blockquote><p>主要分以下几步：</p></blockquote> <blockquote><ol><li>兼容低版本浏览器 =&gt; 2. 新建懒加载组件 =&gt; 3. 新建公共骨架屏组件 =&gt; 4. 异步加载子组件 =&gt; 5. 页面中使用</li></ol></blockquote> <h4 id="_1-兼容低版本浏览器"><a href="#_1-兼容低版本浏览器" aria-hidden="true" class="header-anchor">#</a> 1. 兼容低版本浏览器</h4> <ol><li><p>该项目依赖 <a href="https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API" target="_blank" rel="noopener noreferrer">IntersectionObserver API<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>， 如需在较低版本浏览器运行， 需要首先处理兼容低版本浏览器， 需要引入插件 <strong>IntersectionObserver API polyfill</strong></p></li> <li><p>使用</p></li></ol> <div class="language-js extra-class"><pre class="language-js"><code>   <span class="token comment">// 1. 下载</span>
+   $ npm install intersection <span class="token operator">-</span> observer <span class="token operator">-</span> <span class="token constant">D</span>
+
+   <span class="token comment">// 2. 在mian.js引入</span>
+   <span class="token keyword">import</span> <span class="token string">'intersection-observer'</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="_2-新建一个vuelazycomponent-vue-文件"><a href="#_2-新建一个vuelazycomponent-vue-文件" aria-hidden="true" class="header-anchor">#</a> 2. 新建一个VueLazyComponent.vue 文件</h4> <blockquote><p>因为使用的懒加载组件插件部分不满足我们官网项目， 所以把vue-lazy-component插件的核心代码取出来， 新建一个VueLazyComponent.vue文件存放， 在项目中需要使用到懒加载组件的页面引入即可。</p></blockquote> <ol><li><p>在需要使用懒加载的页面引入 VueLazyComponent.vue 文件</p> <ul><li>引入</li></ul></li></ol> <div class="language-vue extra-class"><pre class="language-vue"><code>   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+     <span class="token comment">// 引入存放在mobile公共文件夹里的VueLazyComponent.vue 来包裹需要加载的子组件</span>
+     <span class="token keyword">import</span> VueLazyComponent <span class="token keyword">from</span> <span class="token string">'components/mobile/common/VueLazyComponent'</span><span class="token punctuation">;</span> 
+     <span class="token comment">// 引入骨架屏组件 (详细见-骨架屏组件） 在子组件未加载时， 为待加载的子组件先占据一块空间</span>
+     <span class="token keyword">import</span> MobileSkeleton <span class="token keyword">from</span> <span class="token string">'components/mobile/common/MobileSkeleton'</span><span class="token punctuation">;</span> 
+   
+     <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+       components<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+         <span class="token string">'vue-lazy-component'</span><span class="token punctuation">:</span> VueLazyComponent<span class="token punctuation">,</span> 
+         <span class="token string">'mobile-skeleton'</span><span class="token punctuation">:</span> MobileSkeleton<span class="token punctuation">,</span> 
+       <span class="token punctuation">}</span><span class="token punctuation">,</span> 
+     <span class="token punctuation">}</span><span class="token punctuation">;</span> 
+   </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><ol start="2"><li><p>VueLazyComponent.vue 源码解读</p> <ul><li><p>使用到的参数和事件</p> <p>** Props **</p></li></ul></li></ol> <table><thead><tr><th>参数</th> <th>说明</th> <th>类型</th> <th>可选值</th> <th>默认值</th></tr></thead> <tbody><tr><td>viewport</td> <td>组件所在的视口， 如果组件是在页面容器内滚动， 视口就是该容器</td> <td>HTMLElement</td> <td>true</td> <td><code>null</code> ， 代表视窗</td></tr> <tr><td>direction</td> <td>视口的滚动方向， <code>vertical</code> 代表垂直方向， <code>horizontal</code> 代表水平方向</td> <td>String</td> <td>true</td> <td><code>vertical</code></td></tr> <tr><td>threshold</td> <td>预加载阈值， css单位</td> <td>String</td> <td>true</td> <td><code>0px</code></td></tr> <tr><td>tagName</td> <td>包裹组件的外层容器的标签名</td> <td>String</td> <td>true</td> <td><code>div</code></td></tr> <tr><td>timeout</td> <td>等待时间， 如果指定了时间， 不论可见与否， 在指定时间之后自动加载</td> <td>Number</td> <td>true</td> <td>-</td></tr></tbody></table> <pre><code>  ** Events **
+</code></pre> <table><thead><tr><th>事件名</th> <th>说明</th> <th>事件参数</th></tr></thead> <tbody><tr><td>before-init</td> <td>模块可见或延时截止导致准备开始加载懒加载模块</td> <td>-</td></tr> <tr><td>init</td> <td>开始加载懒加载模块， 此时骨架组件开始消失</td> <td>-</td></tr> <tr><td>before-enter</td> <td>懒加载模块开始进入</td> <td>el</td></tr> <tr><td>before-leave</td> <td>骨架组件开始离开</td> <td>el</td></tr> <tr><td>after-leave</td> <td>骨架组件已经离开</td> <td>el</td></tr> <tr><td>after-enter</td> <td>懒加载模快已经进入</td> <td>el</td></tr> <tr><td>after-init</td> <td>初始化完成</td> <td></td></tr></tbody></table> <div class="language-vue extra-class"><pre class="language-vue"><code>   <span class="token comment">&lt;!-- VueLazyComponent.vue --&gt;</span>
+   
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>transition-group</span> <span class="token attr-name">:tag</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>tagName<span class="token punctuation">&quot;</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>lazy-component<span class="token punctuation">&quot;</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">=&quot;</span><span class="token attr-value"><span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span> </span><span class="token punctuation">&quot;</span></span>
+                       <span class="token attr-name">@before-enter</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>(el) =&gt; $emit('before-enter', el)<span class="token punctuation">&quot;</span></span>
+                       <span class="token attr-name">@before-leave</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>(el) =&gt; $emit('before-leave', el)<span class="token punctuation">&quot;</span></span>
+                       <span class="token attr-name">@after-enter</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>(el) =&gt; $emit('after-enter', el)<span class="token punctuation">&quot;</span></span>
+                       <span class="token attr-name">@after-leave</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>(el) =&gt; $emit('after-leave', el)<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">v-if</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>isInit<span class="token punctuation">&quot;</span></span> <span class="token attr-name">key</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>component<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>slot</span> <span class="token attr-name">:loading</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>loading<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>slot</span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">v-else-if</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>$slots.skeleton<span class="token punctuation">&quot;</span></span> <span class="token attr-name">key</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>skeleton<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>slot</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>skeleton<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>slot</span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">v-else</span> <span class="token attr-name">key</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>loading<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>transition-group</span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+   
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+   <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+     name<span class="token punctuation">:</span> <span class="token string">'VueLazyComponent'</span><span class="token punctuation">,</span> 
+   
+     props<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+       timeout<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+         type<span class="token punctuation">:</span> Number<span class="token punctuation">,</span> 
+         <span class="token keyword">default</span><span class="token punctuation">:</span> <span class="token number">0</span>
+       <span class="token punctuation">}</span><span class="token punctuation">,</span> 
+       tagName<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+         type<span class="token punctuation">:</span> String<span class="token punctuation">,</span> 
+         <span class="token keyword">default</span><span class="token punctuation">:</span> <span class="token string">'div'</span>
+       <span class="token punctuation">}</span><span class="token punctuation">,</span> 
+       viewport<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+         type<span class="token punctuation">:</span> <span class="token keyword">typeof</span> window <span class="token operator">!==</span> <span class="token string">'undefined'</span> <span class="token operator">?</span> window<span class="token punctuation">.</span> HTMLElement <span class="token punctuation">:</span> Object<span class="token punctuation">,</span> 
+         <span class="token function-variable function">default</span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">null</span>
+       <span class="token punctuation">}</span><span class="token punctuation">,</span> 
+       threshold<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+         type<span class="token punctuation">:</span> String<span class="token punctuation">,</span> 
+         <span class="token keyword">default</span><span class="token punctuation">:</span> <span class="token string">'0px'</span>
+       <span class="token punctuation">}</span><span class="token punctuation">,</span> 
+       direction<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+         type<span class="token punctuation">:</span> String<span class="token punctuation">,</span> 
+         <span class="token keyword">default</span><span class="token punctuation">:</span> <span class="token string">'vertical'</span>
+       <span class="token punctuation">}</span><span class="token punctuation">,</span> 
+       maxWaitingTime<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+         type<span class="token punctuation">:</span> Number<span class="token punctuation">,</span> 
+         <span class="token keyword">default</span><span class="token punctuation">:</span> <span class="token number">50</span>
+       <span class="token punctuation">}</span>
+     <span class="token punctuation">}</span><span class="token punctuation">,</span> 
+   
+     <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token keyword">return</span> <span class="token punctuation">{</span>
+         isInit<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> 
+         timer<span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span> 
+         io<span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span> 
+         loading<span class="token punctuation">:</span> <span class="token boolean">false</span>
+       <span class="token punctuation">}</span><span class="token punctuation">;</span> 
+     <span class="token punctuation">}</span><span class="token punctuation">,</span> 
+   
+     <span class="token function">created</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token comment">// 如果指定timeout则无论可见与否都是在timeout之后初始化</span>
+       <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>timeout<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+         <span class="token keyword">this</span><span class="token punctuation">.</span>timer <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+           <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+         <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>timeout<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+       <span class="token punctuation">}</span>
+     <span class="token punctuation">}</span><span class="token punctuation">,</span> 
+   
+     <span class="token function">mounted</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token keyword">this</span><span class="token punctuation">.</span>timeout<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+         <span class="token comment">// 根据滚动方向来构造视口外边距， 用于提前加载</span>
+         <span class="token keyword">let</span> rootMargin<span class="token punctuation">;</span> 
+         <span class="token keyword">switch</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>direction<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+           <span class="token keyword">case</span> <span class="token string">'vertical'</span><span class="token punctuation">:</span>
+             rootMargin <span class="token operator">=</span> <span class="token template-string"><span class="token string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>threshold<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> 0px`</span></span> <span class="token punctuation">;</span> 
+             <span class="token keyword">break</span><span class="token punctuation">;</span> 
+           <span class="token keyword">case</span> <span class="token string">'horizontal'</span><span class="token punctuation">:</span>
+             rootMargin <span class="token operator">=</span> <span class="token template-string"><span class="token string">`0px </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>threshold<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span> <span class="token punctuation">;</span> 
+             <span class="token keyword">break</span><span class="token punctuation">;</span> 
+           <span class="token keyword">default</span><span class="token punctuation">:</span>
+           <span class="token comment">// do nothing</span>
+         <span class="token punctuation">}</span>
+   
+         <span class="token comment">// 观察视口与组件容器的交叉情况</span>
+         <span class="token keyword">this</span><span class="token punctuation">.</span>io <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">window<span class="token punctuation">.</span></span> <span class="token function">IntersectionObserver</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>intersectionHandler<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+           rootMargin<span class="token punctuation">,</span> 
+           root<span class="token punctuation">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>viewport<span class="token punctuation">,</span> 
+           threshold<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> Number<span class="token punctuation">.</span> <span class="token constant">MIN_VALUE</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">]</span>
+         <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+         <span class="token keyword">this</span><span class="token punctuation">.</span>io<span class="token punctuation">.</span><span class="token function">observe</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>$el<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+       <span class="token punctuation">}</span>
+     <span class="token punctuation">}</span><span class="token punctuation">,</span> 
+   
+     <span class="token function">beforeDestroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token comment">// 在组件销毁前取消观察</span>
+       <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>io<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+         <span class="token keyword">this</span><span class="token punctuation">.</span>io<span class="token punctuation">.</span><span class="token function">unobserve</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>$el<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+       <span class="token punctuation">}</span>
+     <span class="token punctuation">}</span><span class="token punctuation">,</span> 
+   
+     methods<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+       <span class="token comment">// 交叉情况变化处理函数</span>
+       <span class="token function">intersectionHandler</span><span class="token punctuation">(</span><span class="token parameter">entries</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+         <span class="token keyword">if</span> <span class="token punctuation">(</span>
+           <span class="token comment">// 正在交叉</span>
+           entries<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>isIntersecting <span class="token operator">||</span>
+           <span class="token comment">// 交叉率大于0</span>
+           entries<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>intersectionRatio
+         <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+           <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+           <span class="token keyword">this</span><span class="token punctuation">.</span>io<span class="token punctuation">.</span><span class="token function">unobserve</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>$el<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+         <span class="token punctuation">}</span>
+       <span class="token punctuation">}</span><span class="token punctuation">,</span> 
+   
+       <span class="token comment">// 处理组件和骨架组件的切换</span>
+       <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+         <span class="token comment">// 此时说明骨架组件即将被切换</span>
+         <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$emit</span><span class="token punctuation">(</span><span class="token string">'beforeInit'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+         <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$emit</span><span class="token punctuation">(</span><span class="token string">'before-init'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+   
+         <span class="token comment">// 此时可以准备加载懒加载组件的资源</span>
+         <span class="token keyword">this</span><span class="token punctuation">.</span>loading <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span> 
+   
+         <span class="token comment">// 由于函数会在主线程中执行， 加载懒加载组件非常耗时， 容易卡顿</span>
+         <span class="token comment">// 所以在requestAnimationFrame回调中延后执行</span>
+         <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">requestAnimationFrame</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+           <span class="token keyword">this</span><span class="token punctuation">.</span>isInit <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span> 
+           <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$emit</span><span class="token punctuation">(</span><span class="token string">'init'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+         <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+       <span class="token punctuation">}</span><span class="token punctuation">,</span> 
+   
+       <span class="token function">requestAnimationFrame</span><span class="token punctuation">(</span><span class="token parameter">callback</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+         <span class="token comment">// 防止等待太久没有执行回调</span>
+         <span class="token comment">// 设置最大等待时间</span>
+         <span class="token comment">// setTimeout(() =&gt; {</span>
+         <span class="token comment">//   if (this.isInit) return</span>
+         <span class="token comment">//   callback()</span>
+         <span class="token comment">// }, this.maxWaitingTime)</span>
+   
+         <span class="token comment">// 兼容不支持requestAnimationFrame 的浏览器</span>
+         <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token parameter">callbackto</span> <span class="token operator">=&gt;</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span>callbackto<span class="token punctuation">,</span> <span class="token number">300</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">(</span>callback<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+       <span class="token punctuation">}</span>
+     <span class="token punctuation">}</span>
+   <span class="token punctuation">}</span><span class="token punctuation">;</span> 
+   </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>####3. 新建骨架屏组件</p> <p>​	骨架屏组件并没有去获取获取不同子组件的dom节点生成， 只是为了和参考的懒加载插件的逻辑保持一致， 子组件是异步加载， 所以在子组件加载前， 父组件上有 <code>slot=&quot;skeleton&quot;</code> 的组件会先执行， 为子组件在加载前在页面上占据位置。</p> <h4 id="_4-异步引入组件"><a href="#_4-异步引入组件" aria-hidden="true" class="header-anchor">#</a> 4. 异步引入组件</h4> <ol><li>两种语法形式</li></ol> <div class="language-js extra-class"><pre class="language-js"><code>   <span class="token comment">// 两种语法形式： </span>
+   <span class="token number">1</span> <span class="token function-variable function">component</span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'/component_url/'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token number">2</span> <span class="token function-variable function">component</span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token parameter">resolve</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+       <span class="token function">require</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'/component_url/'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> resolve<span class="token punctuation">)</span>
+   <span class="token punctuation">}</span>
+</code></pre></div><ol start="2"><li>页面中路由配置</li></ol> <div class="language-js extra-class"><pre class="language-js"><code>   <span class="token comment">// paceOs.vue</span>
+
+   <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+       name<span class="token punctuation">:</span> <span class="token string">'PACEOS'</span><span class="token punctuation">,</span>
+       metaInfo<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+           title<span class="token punctuation">:</span> <span class="token string">'PACEOS'</span><span class="token punctuation">,</span>
+       <span class="token punctuation">}</span><span class="token punctuation">,</span>
+       components<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+           <span class="token string">'mobile-header-container'</span><span class="token punctuation">:</span> MobileHeaderContainer<span class="token punctuation">,</span>
+           <span class="token string">'vue-lazy-component'</span><span class="token punctuation">:</span> VueLazyComponent<span class="token punctuation">,</span>
+           <span class="token string">'mobile-skeleton'</span><span class="token punctuation">:</span> MobileSkeleton<span class="token punctuation">,</span>
+           <span class="token function-variable function">MobilePaceOsP1</span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'components/mobile/paceos/PaceOs-p1'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+           <span class="token function-variable function">MobilePaceOsP2</span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'components/mobile/paceos/PaceOs-p2'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+           <span class="token operator">...</span>
+           <span class="token function-variable function">MobileFooterContainer</span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'components/mobile/common/FooterContainer'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+       <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token operator">&lt;</span>
+   <span class="token operator">/</span>script<span class="token operator">&gt;</span>
+</code></pre></div><h4 id="_5-页面中使用"><a href="#_5-页面中使用" aria-hidden="true" class="header-anchor">#</a> 5. 页面中使用</h4> <ol><li>模板语法</li></ol> <div class="language-vue extra-class"><pre class="language-vue"><code>   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>vue-lazy-component</span>
+     <span class="token attr-name">@init</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>init<span class="token punctuation">&quot;</span></span>
+     <span class="token attr-name">@beforeInit</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>beforeInit<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+     <span class="token comment">&lt;!-- 真实组件--&gt;</span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mobile-paceOs</span><span class="token punctuation">/&gt;</span></span>
+     <span class="token comment">&lt;!-- 骨架组件， 在真实组件渲染完毕后消失 --&gt;</span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mobile-skeleton</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>skeleton<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>vue-lazy-component</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><ol start="2"><li>项目中使用</li></ol> <div class="language-vue extra-class"><pre class="language-vue"><code>   <span class="token comment">&lt;!-- paceOs.vue --&gt;</span>
+   
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>vue-lazy-component</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">slot-scope</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>scope<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mobile-paceOs-p13</span> <span class="token attr-name">v-if</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>scope.loading<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mobile-skeleton</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>skeleton<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>vue-lazy-component</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><ul><li>通过 <code>vue-lazy-component</code> 标签的包裹， 先预加载 <code>mobile-skeleton</code> 页面预留空间， 待滑到当前页面时， 显示当前子组件。</li> <li>通过  <code>slot-scope</code>  特性从子组件获取数据， <code>scope.loading=true</code> 时， <code>&lt;mobile-paceOs-p13/&gt;</code> 组件渲染成功。</li></ul> <ol start="3"><li><p>使用这个懒加载组件遇到的问题</p> <ul><li>用懒加载组件包裹的子组件 <code>&lt;mobile-paceOs-p3/&gt;</code> 在页面上滑出、 进入时， 动画未执行。</li></ul></li></ol> <div class="language-vue extra-class"><pre class="language-vue"><code>     <span class="token comment">&lt;!--PaceOs.vue--&gt;</span>
+     
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>vue-lazy-component</span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">slot-scope</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>scope<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+       	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mobile-paceOs-p3</span> <span class="token attr-name">v-if</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>scope.loading<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mobile-skeleton</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>skeleton<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>vue-lazy-component</span><span class="token punctuation">&gt;</span></span>
+     ```
+
+```vue
+     <span class="token comment">&lt;!--PaceOs-p3.vue--&gt;</span>
+     
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>paceOs-p3<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+     		...
+         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>on-scroll-view</span> <span class="token attr-name">:config</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>onScrollViewConfig<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>p3-dial zIndex1<span class="token punctuation">&quot;</span></span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>img1<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>//3gimg.qq.com/wspbbs/pace/official-site/images/paceos/s03_dial_l4.png<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+           ...
+         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>on-scroll-view</span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+     ```
+
+   - 通过打印， 发现是PaceOs-p3.vue文件里， `on-scroll-view` 包裹的元素获取的父节点不是最外层父节点， 所以在OnScrollView.vue修改： 
+
+```js
+     // OnScrollView.vue
+
+     // 当前元素头部距离整个页面顶部的距离
+     // this.offsetTop = component.offsetTop + component.offsetParent.offsetTop; 
+     this.offsetTop = component.offsetTop + this.getParentsNode().offsetTop;
+
+     // 获取元素包裹的父节点
+     getParentsNode() {
+         let node = this.$el.offsetParent;
+         if (this.targetClass !== '') {
+             // 如果当前元素的父节点的class不存在‘lazyload', 则一直向上找
+             while (node.getAttribute('class').indexOf(this.targetClass) === -1) {
+                 node = node.offsetParent;
+             }
+         }
+         return node;
+     }
+</code></pre></div><ul><li>在 <code>on-scroll-view</code> 标签里添加 <code>targetClass=&quot;lazyLoad&quot;</code></li></ul> <div class="language-vue extra-class"><pre class="language-vue"><code>     <span class="token comment">&lt;!--PaceOs-p3.vue--&gt;</span>
+     
+         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>on-scroll-view</span> <span class="token attr-name">:config</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>onScrollViewConfig<span class="token punctuation">&quot;</span></span> <span class="token attr-name">targetClass</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>lazyLoad<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+           ...
+         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>on-scroll-view</span><span class="token punctuation">&gt;</span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+     ```
+
+   - 在 `transition-group` 标签添加 `class=&quot;lazyLoad&quot;` 
+
+```vue
+     <span class="token comment">&lt;!-- VueLazyComponent.vue --&gt;</span>
+     
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>transition-group</span> <span class="token attr-name">:tag</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>tagName<span class="token punctuation">&quot;</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>lazy-component<span class="token punctuation">&quot;</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">=&quot;</span><span class="token attr-value"><span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span> </span><span class="token punctuation">&quot;</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>lazyLoad<span class="token punctuation">&quot;</span></span><span class="token attr-name">...</span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>transition-group</span><span class="token punctuation">&gt;</span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+     ```
+
+   - 通过添加的 `getParentsNode()` 方法， 能解决动画未执行的问题。 
+
+####参考链接
+
+[vue-lazyload]: https://github.com/hilongjw/vue-lazyload#readme
+[vue-lazy-component]: https://github.com/xunleif2e/vue-lazy-component
+
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/pages/vue/vue-cli.html" class="prev">
+          📄vue-cli(简）
+        </a></span> <span class="next"><a href="/pages/vue/patch.html">
+          📄遇到的问题
+        </a>
+        →
+      </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.d3efc14e.js" defer></script><script src="/assets/js/2.3a3a5c3a.js" defer></script><script src="/assets/js/26.e8884916.js" defer></script>
+  </body>
+</html>
